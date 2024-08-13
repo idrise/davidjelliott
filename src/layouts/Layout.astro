@@ -1,0 +1,67 @@
+---
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
+
+interface Props {
+	title: string;
+	font: string;
+	codeFont: string;
+}
+
+const { title, font, codeFont } = Astro.props;
+const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '+')}:wght@400;700&family=${codeFont.replace(
+	/ /g,
+	'+'
+)}:wght@400;700`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Personal Homepage" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<GoogleFontsOptimizer url={fontUrl} />
+	</head>
+	<body>
+		<slot />
+	</body><style is:global lang="css" define:vars={{ font, codeFont }}>
+		/* Always use 'font' unless in a pre or code block */
+		body {
+			font-family: var(--font);
+			font-size: 1rem;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+		pre,
+		code {
+			font-family: var(--codeFont);
+			font-size: 1rem;
+		}
+		h1 {
+			font-size: 4rem;
+		}
+		h2 {
+			font-size: 3rem;
+		}
+		h3 {
+			font-size: 2rem;
+		}
+		h4 {
+			font-size: 1.5rem;
+		}
+		h5 {
+			font-size: 1.25rem;
+		}
+		h6 {
+			font-size: 1rem;
+		}
+		pre,
+		code {
+			font-size: 1rem;
+		}
+	</style>
+</html>

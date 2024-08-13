@@ -1,16 +1,32 @@
 ---
-
+import FullPage from '../components/FullPage.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Homepage" font="Nunito" codeFont="Inconsolata">
+	<FullPage>
+		<div class="middle-of-page">
+			<h1>davidjelliott.com</h1>
+			<pre>There is a way to go yet.</pre>
+		</div>
+	</FullPage>
+</Layout>
+
+<style>
+	.middle-of-page {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		@media (prefers-color-scheme: dark) {
+			color: white;
+			background-color: #23262d;
+		}
+		@media (prefers-color-scheme: light) {
+			color: #23262d;
+			background-color: white;
+		}
+	}
+</style>
