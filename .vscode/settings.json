@@ -3,6 +3,7 @@
 		"*": true
 	},
 	"editor.formatOnSave": true,
+	"files.autoSave": "afterDelay",
 	"editor.defaultFormatter": "astro-build.astro-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "always"
