@@ -18,12 +18,18 @@ const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Personal Homepage" />
+		<meta name="description" content="David Elliott, Engineering Manager and Software Engineer" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<GoogleFontsOptimizer url={fontUrl} />
+		<meta property="og:title" content="David Elliott" />
+		<meta property="og:description" content="David Elliott, Engineering Manager and Software Engineer" />
+		<meta property="og:image" content="https://via.placeholder.com/1200x630
+" />
+		<meta property="og:url" content="https://davidjelliott.com" />
+		<meta property="og:type" content="website" />
 	</head>
 	<body>
 		<slot />
