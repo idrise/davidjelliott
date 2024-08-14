@@ -1,3 +1,3 @@
 # davidjelliott
 
-(Deployed)[https://idrise.github.io/davidjelliott/]
+[Deployed](https://idrise.github.io/davidjelliott/)
