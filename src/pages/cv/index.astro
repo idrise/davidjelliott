@@ -12,7 +12,7 @@ import References from '@components/resume/References.astro';
 import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout title="CV" font="Arial" codeFont="Courier New">
+<>
 	<article class="resume">
 		<PersonalInfo personalInfo={resume.personalInfo} />
 		<WorkExperience workExperience={resume.workExperience} />
@@ -23,4 +23,4 @@ import Layout from '@layouts/Layout.astro';
 		<Interests interests={resume.interests} />
 		<References references={resume.references} />
 	</article>
-</Layout>
+</>
