@@ -37,7 +37,25 @@ const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '
 		</div>
 	</body>
 </html>
-<style is:global define:vars={{ font, 'code-font': codeFont }}>
+<style is:global lang="css" define:vars={{ font, 'code-font': codeFont }}>
+	.content-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 10px;
+		text-align: center;
+		max-width: 100%;
+		flex: 1 0 auto;
+
+		@media (width <= 320px) {
+			transform: scale(calc(100vw / 320));
+		}
+
+		/* height: 100vh; */
+	}
+
+	/* Control font sizes for responsive mobile view */
 	* {
 		@media (prefers-color-scheme: dark) {
 			color: white;
@@ -63,43 +81,13 @@ const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '
 		}
 	}
 
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100vh; /* 100% of the viewport height */
-		padding: 0 10px;
-		text-align: center; /* Optional: Center text within the container */
-		overflow: hidden;
-	}
-
-	/* Optional: If you want text or content to scale down as well */
-	.content-container * {
-		max-width: 100%;
-		flex: 1 0 auto;
-	}
-
 	/* Always use 'font' unless in a pre or code block */
 	body {
 		font-family: var(--font);
-		font-size: 1rem;
-		line-height: 1.5;
-		margin: 0;
-		padding: 0;
 	}
 
-	pre,
-	code {
+	pre code {
 		font-family: var(--code-font);
-		font-size: 1rem;
-	}
-
-	pre {
-		font-size: 1rem;
-	}
-
-	code {
 		font-size: 1rem;
 	}
 </style>

@@ -1,0 +1,26 @@
+---
+import type { Award } from '@src/resume/resume-types.ts';
+interface Props {
+	awards?: Award[];
+}
+const { awards } = Astro.props;
+---
+
+{
+	awards && awards.length > 0 && (
+		<section>
+			<h2>Awards and Recognitions</h2>
+			<ul>
+				{awards.map((award) => (
+					<li>
+						<h3>{award.awardTitle}</h3>
+						{award.dateReceived && <time datetime={award.dateReceived}>{award.dateReceived}</time>}
+						{award.awardingOrganization && <p>Awarded by: {award.awardingOrganization}</p>}
+						{award.awardDescription && <p>{award.awardDescription}</p>}
+						{award.url && <a href={award.url}>Learn more</a>}
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

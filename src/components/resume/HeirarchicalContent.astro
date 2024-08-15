@@ -1,0 +1,28 @@
+---
+import type { HierarchicalContent } from '@src/resume/resume-types.ts';
+
+interface Props {
+	hierarchicalContent: HierarchicalContent[];
+}
+const { hierarchicalContent } = Astro.props;
+
+function renderHierarchicalContent(content: HierarchicalContent): string {
+	if (typeof content === 'string') {
+		return `<li>${content}</li>`;
+	} else {
+		const [title, subItems] = content;
+		return `
+      <li>
+        ${title}
+        <ul>
+          ${subItems.map((item) => renderHierarchicalContent(item)).join('')}
+        </ul>
+      </li>
+    `;
+	}
+}
+---
+
+<ul>
+	{hierarchicalContent.map((content) => <Fragment set:html={renderHierarchicalContent(content)} />)}
+</ul>

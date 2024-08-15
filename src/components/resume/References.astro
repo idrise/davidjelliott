@@ -1,0 +1,24 @@
+---
+import type { Reference } from '@src/resume/resume-types.ts';
+interface Props {
+	references?: Reference[];
+}
+const { references } = Astro.props;
+---
+
+{
+	references && references.length > 0 && (
+		<section>
+			<h2>Professional References</h2>
+			{references.map((ref) => (
+				<blockquote>
+					<p>{ref.referenceStatement}</p>
+					<footer>
+						{ref.referenceName}, {ref.referenceTitle}
+						{ref.referenceContact && <p>Contact: {ref.referenceContact}</p>}
+					</footer>
+				</blockquote>
+			))}
+		</section>
+	)
+}

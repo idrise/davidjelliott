@@ -1,11 +1,26 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { resume } from '../../resume/resume.ts';
+import { resume } from '@src/resume/resume.ts';
+
+import PersonalInfo from '@components/resume/PersonalInfo.astro';
+import WorkExperience from '@components/resume/WorkExperience.astro';
+import Education from '@components/resume/Education.astro';
+import Skills from '@components/resume/Skills.astro';
+import Languages from '@components/resume/Languages.astro';
+import Interests from '@components/resume/Interests.astro';
+import Awards from '@components/resume/Awards.astro';
+import References from '@components/resume/References.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout title="Resume" font="Nunito" codeFont="Inconsolata">
-	<h1>{resume.personalInfo.fullName}</h1>
-	<h2>{resume.personalInfo.professionalTitle}</h2>
-
-	<p>{resume.personalInfo.professionalSummary}</p>
+<Layout title="CV" font="Arial" codeFont="Courier New">
+	<article class="resume">
+		<PersonalInfo personalInfo={resume.personalInfo} />
+		<WorkExperience workExperience={resume.workExperience} />
+		<Education education={resume.education} />
+		<Awards awards={resume.awards} />
+		<Skills skills={resume.skills} />
+		<Languages languages={resume.languages} />
+		<Interests interests={resume.interests} />
+		<References references={resume.references} />
+	</article>
 </Layout>

@@ -1,32 +1,44 @@
 ---
+import FullScreenLayout from '@layouts/FullScreenLayout.astro';
 import FullPage from '../components/FullPage.astro';
-import Layout from '../layouts/Layout.astro';
+
+const daveisms = [
+	'I am an observer of life',
+	'I compete only with myself',
+	'Food, water, shelter, and love',
+	'The past is an unreliable narrator',
+	'Truth is scarce and out there',
+	'There is a way to go yet',
+];
+
+// Choose based on the day and the number of daveisms
+const daveism = daveisms[Math.floor(new Date().getTime() / (1000 * 60 * 60)) % daveisms.length];
 ---
 
-<Layout title="Homepage" font="Nunito" codeFont="Inconsolata">
+<FullScreenLayout title="Homepage" font="Nunito" codeFont="Inconsolata">
 	<FullPage>
 		<div class="middle-of-page">
 			<h1>davidjelliott.com</h1>
-			<pre>There is a way to go yet.</pre>
+			<pre>{daveism}</pre>
 		</div>
 	</FullPage>
-</Layout>
+</FullScreenLayout>
 
 <style>
+	* {
+		margin: 0;
+	}
+	
+	h1 {
+		font-size: 4rem;
+	}
+
 	.middle-of-page {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-
-		@media (prefers-color-scheme: dark) {
-			color: white;
-			background-color: #23262d;
-		}
-		@media (prefers-color-scheme: light) {
-			color: #23262d;
-			background-color: white;
-		}
+		width: 100%;
 	}
 </style>

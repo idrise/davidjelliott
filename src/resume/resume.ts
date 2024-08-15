@@ -4,7 +4,7 @@ export const resume: Resume = {
   personalInfo: {
     fullName: "Jane Doe",
     professionalTitle: "Senior Software Engineer",
-    profileImageUrl: "https://example.com/jane-doe-profile.jpg",
+    profileImageUrl: "https://loremflickr.com/512/512",
     emailAddress: "jane.doe@email.com",
     phoneNumber: "+1 (555) 123-4567",
     websiteUrl: "https://janedoe.dev",
@@ -33,7 +33,7 @@ export const resume: Resume = {
   workExperience: [
     {
       companyName: "Tech Innovators Inc.",
-      companyLogoUrl: "https://example.com/tech-innovators-logo.png",
+      companyLogoUrl: "https://loremflickr.com/1024/512",
       jobTitle: "Senior Software Engineer",
       companyUrl: "https://techinnovators.com",
       startDate: "2019-03-01",
@@ -137,7 +137,7 @@ export const resume: Resume = {
     "Hiking",
     "Photography",
   ],
-  professionalReferences: [
+  references: [
     {
       referenceName: "John Smith",
       referenceTitle: "CTO at Tech Innovators Inc.",

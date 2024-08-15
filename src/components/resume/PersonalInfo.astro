@@ -1,0 +1,54 @@
+---
+import type { PersonalInfo } from '@src/resume/resume-types';
+
+interface Props {
+	personalInfo: PersonalInfo;
+}
+const { personalInfo } = Astro.props;
+---
+
+<header>
+	<h1>{personalInfo.fullName}</h1>
+	<p>{personalInfo.professionalTitle}</p>
+	{
+		personalInfo.profileImageUrl && (
+			<img src={personalInfo.profileImageUrl} alt={`${personalInfo.fullName}'s profile`} />
+		)
+	}
+	{personalInfo.emailAddress && <p>Email: {personalInfo.emailAddress}</p>}
+	{personalInfo.phoneNumber && <p>Phone: {personalInfo.phoneNumber}</p>}
+	{
+		personalInfo.websiteUrl && (
+			<p>
+				Website: <a href={personalInfo.websiteUrl}>{personalInfo.websiteUrl}</a>
+			</p>
+		)
+	}
+	{
+		personalInfo.location && (
+			<address>
+				{personalInfo.location.streetAddress},{personalInfo.location.city && `${personalInfo.location.city}, `}
+				{personalInfo.location.region && `${personalInfo.location.region}, `}
+				{personalInfo.location.postalCode}
+				{personalInfo.location.countryCode && `, ${personalInfo.location.countryCode}`}
+			</address>
+		)
+	}
+	{
+		personalInfo.socialProfiles && (
+			<ul>
+				{personalInfo.socialProfiles.map((profile) => (
+					<li>
+						<a href={profile.url}>
+							{profile.platform}: {profile.username}
+						</a>
+					</li>
+				))}
+			</ul>
+		)
+	}
+	<section>
+		<h2>Professional Summary</h2>
+		<p>{personalInfo.professionalSummary}</p>
+	</section>
+</header>

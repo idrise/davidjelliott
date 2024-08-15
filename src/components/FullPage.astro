@@ -13,28 +13,32 @@
  */
 ---
 
-<slot />
-<style is:global>
-	body {
-		/* Prevent the whole page from scrolling */
-		overflow: hidden;
-		/* Set height to 100% of the viewport height */
-		height: 100vh;
-		margin: 0;
-	}
-</style>
+<>
+	<slot />
 
-<script>
-	function setGroupHeights() {
-		var groups = document.querySelectorAll<HTMLElement>('[id="100vh"]');
-		groups.forEach((group: HTMLElement) => {
-			group.style.height = window.innerHeight + 'px';
-		});
-	}
+	<style is:global>
+		body {
+			/* Prevent the whole page from scrolling */
+			overflow: hidden;
 
-	// Set the height on initial load
-	setGroupHeights();
+			/* Set height to 100% of the viewport height */
+			height: 100vh;
+			margin: 0;
+		}
+	</style>
 
-	// Adjust the height when the window is resized
-	window.addEventListener('resize', setGroupHeights);
-</script>
+	<script>
+		function setGroupHeights() {
+			const groups = document.querySelectorAll<HTMLElement>('[id="100vh"]');
+			groups.forEach((group: HTMLElement) => {
+				group.style.height = window.innerHeight + 'px';
+			});
+		}
+
+		// Set the height on initial load
+		setGroupHeights();
+
+		// Adjust the height when the window is resized
+		window.addEventListener('resize', setGroupHeights);
+	</script>
+</>
