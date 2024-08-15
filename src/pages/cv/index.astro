@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { resume } from '../../resume/resume.ts';
+---
+
+<Layout title="Resume" font="Nunito" codeFont="Inconsolata">
+	<h1>{resume.personalInfo.fullName}</h1>
+	<h2>{resume.personalInfo.professionalTitle}</h2>
+
+	<p>{resume.personalInfo.professionalSummary}</p>
+</Layout>
