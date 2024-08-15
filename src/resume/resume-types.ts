@@ -135,6 +135,8 @@ export interface Award {
   awardingOrganization?: string;
   /** Brief description of the award and its significance (optional) */
   awardDescription?: string;
+  /** URL of the award */
+  url?: string;
 }
 
 /**
@@ -145,6 +147,12 @@ export interface Skill {
   skillName: string;
   /** Proficiency level (e.g., "Beginner", "Intermediate", "Expert") (optional) */
   proficiencyLevel?: string;
+  /** The organisation that certified the skill, IE LinkedIn or Microsoft */
+  certifyingOrganisation?: string;
+  /** The name of the certification */
+  certificationName?: string;
+  /** URL for demonstrating the skill or to the certificate (optional) */
+  url?: string;
   /** List of related keywords or technologies (optional) */
   relatedKeywords?: string[];
 }
