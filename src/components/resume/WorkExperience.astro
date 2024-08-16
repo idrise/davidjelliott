@@ -1,0 +1,52 @@
+---
+import type { WorkExperience } from '@src/resume/resume-types';
+import HeirarchicalContent from './HeirarchicalContent.astro';
+
+interface Props {
+	workExperience: WorkExperience[];
+}
+const { workExperience } = Astro.props;
+---
+
+<section>
+	<h2>Work Experience</h2>
+	{
+		workExperience.map((job) => (
+			<article>
+				{job.companyLogoUrl && <img src={job.companyLogoUrl} alt={`${job.companyName} logo`} />}
+				<h3>
+					{job.jobTitle} at {job.companyName}
+				</h3>
+				{job.companyUrl && <a href={job.companyUrl}>{job.companyUrl}</a>}
+				{job.jobLocation && (
+					<address>
+						{job.jobLocation.city && `${job.jobLocation.city}, `}
+						{job.jobLocation.region && `${job.jobLocation.region}, `}
+						{job.jobLocation.countryCode && job.jobLocation.countryCode}
+					</address>
+				)}
+				{job.startDate && <time datetime={job.startDate}>{job.startDate}</time>}
+				{job.endDate && (
+					<>
+						{' '}
+						- <time datetime={job.endDate}>{job.endDate}</time>
+					</>
+				)}
+				{job.companyDescription && <p>{job.companyDescription}</p>}
+				{job.jobSummary && <p>{job.jobSummary}</p>}
+				{job.achievements && job.achievements.length > 0 && (
+					<ul>
+						<HeirarchicalContent hierarchicalContent={job.achievements} />
+					</ul>
+				)}
+				{job.relevantSkills && job.relevantSkills.length > 0 && (
+					<ul>
+						{job.relevantSkills.map((skill) => (
+							<li>{skill}</li>
+						))}
+					</ul>
+				)}
+			</article>
+		))
+	}
+</section>

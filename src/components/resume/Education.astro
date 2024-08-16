@@ -1,0 +1,40 @@
+---
+import type { Education } from '@src/resume/resume-types.ts';
+interface Props {
+	education: Education[];
+}
+const { education } = Astro.props;
+---
+
+{
+	education && education.length > 0 && (
+		<section>
+			<h2>Education</h2>
+			{education.map((qualification) => (
+				<article>
+					<h3>
+						{qualification.qualificationTitle} in {qualification.fieldOfStudy}
+					</h3>
+					<p>{qualification.institutionName}</p>
+					{qualification.startDate && (
+						<time datetime={qualification.startDate}>{qualification.startDate}</time>
+					)}
+					{qualification.endDate && (
+						<>
+							{' - '}
+							<time datetime={qualification.endDate}>{qualification.endDate}</time>
+						</>
+					)}
+					{qualification.programOverview && <p>{qualification.programOverview}</p>}
+					{qualification.achievements && qualification.achievements.length > 0 && (
+						<ul>
+							{qualification.achievements.map((achievement) => (
+								<li>{achievement}</li>
+							))}
+						</ul>
+					)}
+				</article>
+			))}
+		</section>
+	)
+}

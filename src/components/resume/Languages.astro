@@ -1,0 +1,23 @@
+---
+import type { Language } from '@src/resume/resume-types.ts';
+interface Props {
+	languages?: Language[];
+}
+const { languages } = Astro.props;
+---
+
+{
+	languages && languages.length > 0 && (
+		<section>
+			<h2>Languages</h2>
+			<ul>
+				{languages.map((lang) => (
+					<li>
+						{lang.languageName}
+						{lang.fluencyLevel && <>{` - ${lang.fluencyLevel}`}</>}
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

@@ -1,32 +1,53 @@
 ---
-import FullPage from '../components/FullPage.astro';
 import Layout from '../layouts/Layout.astro';
+const daveisms = [
+	'i am an observer of life',
+	'i compete only with myself',
+	'food, water, shelter, and love',
+	'the past is an unreliable narrator',
+	'truth is scarce, seek it',
+	'there is a way to go yet',
+];
+
+// Choose based on the day and the number of daveisms
+const daveism = daveisms[Math.floor(new Date().getTime() / (1000 * 60 * 60)) % daveisms.length];
 ---
 
-<Layout title="Homepage" font="Nunito" codeFont="Inconsolata">
-	<FullPage>
-		<div class="middle-of-page">
+<Layout title="David J Elliott" font="Nunito" codeFont="Inconsolata">
+	<div class="page">
+		<div class="centred-container">
 			<h1>davidjelliott.com</h1>
-			<pre>There is a way to go yet.</pre>
+			<pre>{daveism}</pre>
 		</div>
-	</FullPage>
+	</div>
 </Layout>
 
 <style>
-	.middle-of-page {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
+	.page {
+		min-height: 100vh;
+		display: grid;
+		place-items: center;
+	}
 
-		@media (prefers-color-scheme: dark) {
-			color: white;
-			background-color: #23262d;
+	.centred-container {
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 4rem;
+	}
+
+	pre {
+		font-size: 1.5rem;
+	}
+
+	@media (width <= 620px) {
+		h1 {
+			font-size: 2rem;
 		}
-		@media (prefers-color-scheme: light) {
-			color: #23262d;
-			background-color: white;
+
+		pre {
+			font-size: 1rem;
 		}
 	}
 </style>

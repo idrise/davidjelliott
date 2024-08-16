@@ -7,7 +7,7 @@
  *    ["Skills", ["JavaScript", "TypeScript", "React", ["Frontend", ["HTML", "CSS"]]]]
  * ];
  */
-type HierarchicalContent = string | [string, HierarchicalContent[]];
+export type HierarchicalContent = string | [string, HierarchicalContent[]];
 
 /**
  * Represents a physical location, typically used for addresses in a CV.
@@ -160,7 +160,7 @@ export interface Skill {
 /**
  * Represents language proficiency.
  */
-export interface LanguageProficiency {
+export interface Language {
   /** Name of the language */
   languageName: string;
   /** Level of fluency (e.g., "Native", "Fluent", "Intermediate", "Basic") (optional) */
@@ -170,7 +170,7 @@ export interface LanguageProficiency {
 /**
  * Represents a professional reference.
  */
-export interface ProfessionalReference {
+export interface Reference {
   /** Name of the reference */
   referenceName: string;
   /** Position or title of the reference */
@@ -199,9 +199,9 @@ export interface Resume {
   /** List of awards and recognitions (optional) */
   awards?: Award[];
   /** List of language proficiencies (optional) */
-  languages?: LanguageProficiency[];
+  languages?: Language[];
   /** List of personal interests (optional) */
   interests?: Interest[];
   /** List of professional references (optional) */
-  professionalReferences?: ProfessionalReference[];
+  references?: Reference[];
 }

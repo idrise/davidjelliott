@@ -1,0 +1,37 @@
+---
+import type { Skill } from '@src/resume/resume-types.ts';
+interface Props {
+	skills?: Skill[];
+}
+const { skills } = Astro.props;
+---
+
+{
+	skills && skills.length > 0 && (
+		<section>
+			<h2>Skills</h2>
+			<ul>
+				{skills.map((skill) => (
+					<li>
+						{skill.skillName}
+						{skill.proficiencyLevel && <> - {skill.proficiencyLevel}</>}
+						{skill.certifyingOrganisation && (
+							<p>
+								Certified by {skill.certifyingOrganisation}
+								{skill.certificationName && `: ${skill.certificationName}`}
+							</p>
+						)}
+						{skill.url && <a href={skill.url}>View certification</a>}
+						{skill.relatedKeywords && skill.relatedKeywords.length > 0 && (
+							<ul>
+								{skill.relatedKeywords.map((keyword: string) => (
+									<li>{keyword}</li>
+								))}
+							</ul>
+						)}
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}
