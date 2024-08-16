@@ -17,15 +17,6 @@ importers:
       astro-google-fonts-optimizer:
         specifier: ^0.2.2
         version: 0.2.2
-      stylelint:
-        specifier: ^16.8.2
-        version: 16.8.2(typescript@5.5.4)
-      stylelint-config-astro:
-        specifier: ^1.0.4
-        version: 1.0.4(postcss-html@1.7.0)(stylelint@16.8.2(typescript@5.5.4))
-      stylelint-config-standard:
-        specifier: ^36.0.1
-        version: 36.0.1(stylelint@16.8.2(typescript@5.5.4))
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -54,6 +45,15 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
+      stylelint:
+        specifier: ^16.8.2
+        version: 16.8.2(typescript@5.5.4)
+      stylelint-config-astro:
+        specifier: ^1.0.4
+        version: 1.0.4(postcss-html@1.7.0)(stylelint@16.8.2(typescript@5.5.4))
+      stylelint-config-standard:
+        specifier: ^36.0.1
+        version: 36.0.1(stylelint@16.8.2(typescript@5.5.4))
       typescript-eslint:
         specifier: ^8.1.0
         version: 8.1.0(eslint@9.9.0)(typescript@5.5.4)
