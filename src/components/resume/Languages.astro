@@ -14,7 +14,7 @@ const { languages } = Astro.props;
 				{languages.map((lang) => (
 					<li>
 						{lang.languageName}
-						{lang.fluencyLevel && <> - {lang.fluencyLevel}</>}
+						{lang.fluencyLevel && <>{` - ${lang.fluencyLevel}`}</>}
 					</li>
 				))}
 			</ul>

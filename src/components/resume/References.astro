@@ -12,11 +12,16 @@ const { references } = Astro.props;
 			<h2>Professional References</h2>
 			{references.map((ref) => (
 				<blockquote>
-					<p>{ref.referenceStatement}</p>
-					<footer>
+					<header>
 						{ref.referenceName}, {ref.referenceTitle}
-						{ref.referenceContact && <p>Contact: {ref.referenceContact}</p>}
-					</footer>
+					</header>
+					<p>{ref.referenceStatement}</p>
+					{ref.referenceContact && (
+						<footer>
+							{' '}
+							<p>Contact: {ref.referenceContact}</p>
+						</footer>
+					)}
 				</blockquote>
 			))}
 		</section>

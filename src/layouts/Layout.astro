@@ -32,9 +32,7 @@ const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '
 		<meta property="og:type" content="website" />
 	</head>
 	<body>
-		<div class="content-container">
-			<slot />
-		</div>
+		<slot />
 	</body>
 </html>
 <style is:global define:vars={{ font, 'code-font': codeFont }}>
@@ -49,44 +47,12 @@ const fontUrl = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '
 			background-color: white;
 		}
 
-		font-size: 1rem;
-
-		/* Scale the content if less than 400px */
-
-		@media (width <= 600px) {
-			font-size: 0.45rem;
-		}
-
-		/* When the resolution goes from 320px down to 50px i'd prefer the content to scale. */
-		@media (width <= 320px) {
-			font-size: 0.3rem;
-		}
-	}
-
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100vh; /* 100% of the viewport height */
-		padding: 0 10px;
-		text-align: center; /* Optional: Center text within the container */
-		overflow: hidden;
-	}
-
-	/* Optional: If you want text or content to scale down as well */
-	.content-container * {
-		max-width: 100%;
-		flex: 1 0 auto;
+		margin: 0;
 	}
 
 	/* Always use 'font' unless in a pre or code block */
 	body {
 		font-family: var(--font);
-		font-size: 1rem;
-		line-height: 1.5;
-		margin: 0;
-		padding: 0;
 	}
 
 	pre,

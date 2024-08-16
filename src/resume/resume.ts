@@ -73,6 +73,19 @@ export const resume: Resume = {
         "Integrated third-party APIs to enhance application functionality",
       ],
       relevantSkills: ["JavaScript", "React", "Express.js", "MongoDB"],
+      companyDescription: "Boutique web development agency",
+      companyLogoUrl: "https://loremflickr.com/1024/512",
+      jobLocation: {
+        streetAddress: "789 Web Lane",
+        postalCode: "90210",
+        city: "Los Angeles",
+        countryCode: "US",
+        region: "California"
+
+
+        
+      },
+      companyUrl: "https://startuprocket.com",
     },
   ],
   skills: [
@@ -80,22 +93,18 @@ export const resume: Resume = {
       skillName: "JavaScript",
       proficiencyLevel: "Expert",
       relatedKeywords: ["ES6+", "TypeScript", "Node.js"],
+      certificationName: "JavaScript Certification",
+      certifyingOrganisation: "Codecademy",
+      url: "https://www.codecademy.com/learn/introduction-to-javascript",
     },
     {
       skillName: "React",
       proficiencyLevel: "Expert",
       relatedKeywords: ["Redux", "React Hooks", "Next.js"],
-    },
-    {
-      skillName: "Node.js",
-      proficiencyLevel: "Advanced",
-      relatedKeywords: ["Express.js", "Koa", "REST APIs"],
-    },
-    {
-      skillName: "Database Design",
-      proficiencyLevel: "Intermediate",
-      relatedKeywords: ["SQL", "MongoDB", "Database Optimization"],
-    },
+      certificationName: "React Nanodegree",
+      certifyingOrganisation: "Udacity",
+      url: "https://www.udacity.com/course/react-nanodegree--nd019",
+    }
   ],
   education: [
     {
@@ -119,6 +128,7 @@ export const resume: Resume = {
       awardingOrganization: "Tech Innovators Inc.",
       awardDescription:
         "Recognized for outstanding contributions to product development and team leadership.",
+      url: "https://techinnovators.com/employee-of-the-year",
     },
   ],
   languages: [
@@ -145,5 +155,12 @@ export const resume: Resume = {
         "Jane is an exceptional engineer and leader. Her technical skills and ability to mentor others have been invaluable to our team.",
       referenceContact: "Available upon request",
     },
+    {
+      referenceName: "Alice Johnson",
+      referenceTitle: "Lead Developer at StartUp Rocket",
+      referenceStatement:
+        "It was a pleasure working with Jane. Her dedication to quality and problem-solving skills were evident in every project we collaborated on.",
+      referenceContact: "Available upon request",
+    }
   ],
 };

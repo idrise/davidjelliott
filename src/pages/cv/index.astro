@@ -9,10 +9,10 @@ import Languages from '@components/resume/Languages.astro';
 import Interests from '@components/resume/Interests.astro';
 import Awards from '@components/resume/Awards.astro';
 import References from '@components/resume/References.astro';
-
+import Layout from '@layouts/Layout.astro';
 ---
 
-<>
+<Layout title="David Elliott CV" font="Nunito" codeFont="Inconsolata">
 	<article class="resume">
 		<PersonalInfo personalInfo={resume.personalInfo} />
 		<WorkExperience workExperience={resume.workExperience} />
@@ -23,4 +23,4 @@ import References from '@components/resume/References.astro';
 		<Interests interests={resume.interests} />
 		<References references={resume.references} />
 	</article>
-</>
+</Layout>
